@@ -1,15 +1,15 @@
-name: Delete
-on:
-  schedule:
-    - cron: "0 0 * * SUN"
+# name: Delete
+# on:
+#   schedule:
+#     - cron: "0 0 * * SUN"
 
-jobs:
-  del_runs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Delete
-        uses: GitRML/delete-workflow-runs@main
-        with:
-          token: ${{ GH_TOKEN }}
-          repository: ${{ github.repository }}
-          retain_days: 30
+# jobs:
+#   del_runs:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Delete
+#         uses: GitRML/delete-workflow-runs@main
+#         with:
+#           token: ${{ GH_TOKEN }}
+#           repository: ${{ github.repository }}
+#           retain_days: 30
