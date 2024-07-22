@@ -48,17 +48,17 @@ jobs:
 
       - name: Check
         run: |
-          if [ -z "$GIST_PAT" ]; then
-              echo "Error: environment 'GIST_PAT' cannot be empty"
+          if [ -z "$SECRETS_PAT" ]; then
+              echo "Error: environment 'SECRETS_PAT' cannot be empty"
               exit 1
           fi
 
-          if [ -z "$GIST_LINK" ]; then
-              echo "Error: environment 'GIST_LINK' cannot be empty"
+          if [ -z "$SECRETS_GIST_ID" ]; then
+              echo "Error: environment 'SECRETS_GIST_ID' cannot be empty"
               exit 1
           fi
 
-          LINK_PARTS=$(echo "$GIST_LINK" | awk -F'/' 'NF==2 && $1!="" && $2!=""')
+          LINK_PARTS=$(echo "$SECRETS_GIST_ID" | awk -F'/' 'NF==2 && $1!="" && $2!=""')
           if [ -z "$LINK_PARTS" ]; then
               echo "Error: environment 'GIST_LINK' is not valid, should be 'username/gist_id' format"
               exit 1
